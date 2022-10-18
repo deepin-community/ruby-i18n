@@ -1,0 +1,307 @@
+ruby-i18n (1.8.11-1) unstable; urgency=medium
+
+  * Team upload.
+  * New upstream release.
+  * d/control (Standards-Version): Bump to 4.6.0.
+  * d/copyright: Update file and make it DEP-compatible.
+  * d/upstream/metadata: Remove Name and Contact fields. Fix other URLs.
+
+ -- Daniel Leidert <dleidert@debian.org>  Sat, 13 Nov 2021 19:47:50 +0100
+
+ruby-i18n (1.8.10-1) unstable; urgency=medium
+
+  * Team upload
+  * New upstream version 1.8.10
+
+ -- Hideki Yamane <henrich@debian.org>  Sat, 12 Jun 2021 13:29:53 +0900
+
+ruby-i18n (1.8.8-1) unstable; urgency=medium
+
+  * Team upload
+  * New upstream version 1.8.8
+
+  [ Cédric Boutillier ]
+  * [ci skip] Update team name
+  * [ci skip] Add .gitattributes to keep unwanted files out of
+    the source package
+
+  [ Hideki Yamane ]
+  * debian/control
+    - Set Standards-Version: 4.5.1
+
+ -- Hideki Yamane <henrich@debian.org>  Sat, 06 Feb 2021 09:43:46 +0900
+
+ruby-i18n (1.8.5-1) unstable; urgency=medium
+
+  * Team upload
+
+  * New upstream version 1.8.5
+
+ -- Hideki Yamane <henrich@debian.org>  Tue, 28 Jul 2020 08:52:01 +0900
+
+ruby-i18n (1.8.3-1) unstable; urgency=medium
+
+  * Team upload
+
+  * New upstream release 1.8.3
+  * debian/salsa-ci.yml
+    - Disable unnecessary tests
+  * debian/control
+    - Set debhelper-compat (= 13)
+
+ -- Hideki Yamane <henrich@debian.org>  Wed, 24 Jun 2020 21:03:09 +0900
+
+ruby-i18n (1.8.2-2) unstable; urgency=medium
+
+  * Team upload
+  * Add Breaks: on version of redmine that still had a too strict dependency.
+
+ -- Antonio Terceiro <terceiro@debian.org>  Fri, 14 Feb 2020 07:32:57 -0300
+
+ruby-i18n (1.8.2-1) unstable; urgency=medium
+
+  * Team upload
+  * New upstream version 1.8.2
+  * Refresh patches
+  * Add patch to avoid picking up the version number from an installed version
+    of the package (Closes: #927339).
+  * Add patch to avoid loading code from an installed version of the package.
+
+ -- Antonio Terceiro <terceiro@debian.org>  Thu, 06 Feb 2020 18:40:52 +0100
+
+ruby-i18n (1.5.3-2) unstable; urgency=medium
+
+  * Team Upload
+
+  [ Utkarsh Gupta ]
+  * Add salsa-ci.yml
+
+  [ Debian Janitor ]
+  * Use secure URI in Homepage field.
+  * Update standards version to 4.4.1, no changes needed.
+  * Bump debhelper from old 11 to 12.
+  * Set upstream metadata fields: Repository.
+
+  [ Pirate Praveen ]
+  * Drop dependency on ruby (see #934948).
+
+ -- Pirate Praveen <praveen@debian.org>  Tue, 24 Dec 2019 22:32:33 +0530
+
+ruby-i18n (1.5.3-1) unstable; urgency=medium
+
+  * debian/watch: pull from github
+  * New upstream version 1.5.3
+  * Update packaging with a new run of dh-make-ruby
+    - Update (build) dependencies
+    - Bump Standards-Version to 4.3.0, no changes needed otherwise
+    - Update Homepage:
+    - Add Testsuite: and Rules-Require-Root: no
+    - debian/ruby-tests.rake: reset to the template produced by dh-make-ruby
+    - debian/rules: add --check-dependencies to gem2deb options
+  * Refresh patches
+    - strip_bundler.patch: simplified to the mininum necessary
+    - Ignore-metadata-on-frozen-objects.patch: dropped, already applied
+      upstream
+    - CVE-2014-10077.patch: dropped, fixed upstream (the relevant file
+      changed completely since)
+
+ -- Antonio Terceiro <terceiro@debian.org>  Sat, 02 Feb 2019 10:46:00 -0200
+
+ruby-i18n (0.7.0-3) unstable; urgency=medium
+
+  [ Chris Lamb ]
+  * CVE-2014-10077: Prevent a remote denial-of-service vulnerability via an
+    application crash by engineering a situation where `:some_key` is present
+    in `keep_keys` but not present in the hash. (Closes: #913093)
+  * debian/control:
+    - Update Vcs-* headers to point to salsa.
+    - Move to debhelper compat level 11.
+    - Drop trailing whitespaces and empty fields.
+    - wrap-and-sort -sa.
+    - Bump Standards-Version to 4.2.1.
+  * Update debian/watch to use gemwatch.debian.net.
+
+  [ Antonio Terceiro ]
+  * Remove myself from Uploaders:
+
+  [ Cédric Boutillier ]
+  * Bump debhelper compatibility level to 9.
+  * Remove version in the gem2deb build-dependency.
+  * Use https:// in Vcs-* fields.
+  * Bump Standards-Version to 3.9.7 (no changes needed).
+  * Run wrap-and-sort on packaging files.
+
+ -- Chris Lamb <lamby@debian.org>  Wed, 21 Nov 2018 10:08:04 +0100
+
+ruby-i18n (0.7.0-2) unstable; urgency=medium
+
+  * Upload to unstable
+
+ -- Antonio Terceiro <terceiro@debian.org>  Sat, 12 Dec 2015 13:05:05 -0200
+
+ruby-i18n (0.7.0-1) experimental; urgency=medium
+
+  [ Pirate Praveen ]
+  * Team upload.
+  * New upstream release.
+  * Refresh patches.
+  * Remove patch i18n_set.patch (already applied).
+
+  [ Antonio Terceiro ]
+  * Ignore-metadata-on-frozen-objects.patch: make tests pass on ruby2.2
+  * drop revert-available-locales-cache.patch; ruby-stringex fixed to work
+    with newer versions of ruby-i18n
+
+ -- Antonio Terceiro <terceiro@debian.org>  Fri, 31 Jul 2015 10:39:39 -0300
+
+ruby-i18n (0.6.11-2) unstable; urgency=medium
+
+  * Team upload.
+  * Remove myself from Uploaders.
+  * Add patch revert-available-locales-cache.patch.
+    Closes: #770194, #765124
+
+ -- Lucas Nussbaum <lucas@debian.org>  Thu, 07 May 2015 22:37:30 +0200
+
+ruby-i18n (0.6.11-1) unstable; urgency=low
+
+  * Team upload.
+  * Imported Upstream version 0.6.11
+  * removed fix_mocha.patch, included by upstream
+  * refreshed strip_bundler patch
+  * d/docs: upstream change readme name
+  * added patch for missing set from upstream
+
+ -- Jonas Genannt <jonas.genannt@capi2name.de>  Tue, 29 Jul 2014 21:00:39 +0200
+
+ruby-i18n (0.6.9-2) unstable; urgency=medium
+
+  * Team upload.
+  * added patch fix_mocha, to support new moch versions (Closes: #741800)
+
+ -- Jonas Genannt <jonas.genannt@capi2name.de>  Thu, 20 Mar 2014 21:15:50 +0100
+
+ruby-i18n (0.6.9-1) unstable; urgency=high
+
+  * Team upload.
+  * Imported Upstream version 0.6.9
+    - fixes CVE-2013-4492
+
+ -- Jonas Genannt <jonas.genannt@capi2name.de>  Mon, 30 Dec 2013 19:29:26 +0100
+
+ruby-i18n (0.6.5-1) unstable; urgency=low
+
+  * Team upload.
+  * New Upstream Release
+  * d/control:
+    - bumped standards version
+    - changed ruby1.8 dependency to ruby
+    - wrap-sort
+  * removed patches
+    - rubygems is loaded per default
+    - test works, no need to skip
+  * patch strip_bundler refreshed, moved to extra file
+
+ -- Jonas Genannt <jonas.genannt@capi2name.de>  Wed, 27 Nov 2013 19:26:54 +0100
+
+ruby-i18n (0.6.4-1) unstable; urgency=low
+
+  * Team upload.
+
+  [ Cédric Boutillier ]
+  * debian/control: remove obsolete DM-Upload-Allowed flag
+  * use canonical URI in Vcs-* fields
+
+  [ Christian Hofstaedtler ]
+  * New upstream version 0.6.4.
+  * Use ruby-test-unit during build
+  * Bump Standards-Version to 3.9.4 (no changes)
+
+  [ Praveen Arimbrathodiyil ]
+  * Fix conflicts with 0.6.1-1 upload.
+
+ -- Christian Hofstaedtler <christian@hofstaedtler.name>  Mon, 03 Jun 2013 15:34:13 +0200
+
+ruby-i18n (0.6.1-1) unstable; urgency=low
+
+  * Team upload.
+  * New upstream release: 0.6.1
+  * Remove transitional packages.
+
+ -- Praveen Arimbrathodiyil <praveen@debian.org>  Mon, 03 Jun 2013 19:20:31 +0530
+
+ruby-i18n (0.6.0-3) unstable; urgency=low
+
+  * Bump build dependency on gem2deb to >= 0.3.0~
+
+ -- Antonio Terceiro <terceiro@debian.org>  Sun, 24 Jun 2012 22:11:10 -0300
+
+ruby-i18n (0.6.0-2) unstable; urgency=low
+
+  * Bump build dependency on gem2deb to >= 0.3.0~
+
+ -- Antonio Terceiro <terceiro@debian.org>  Sun, 24 Jun 2012 22:10:14 -0300
+
+ruby-i18n (0.6.0-1) unstable; urgency=low
+
+  [ Lucas Nussbaum ]
+  * Switch to gem2deb-based packaging. Rename source and binary package.
+
+  [ Antonio Terceiro ]
+  * New upstream release: 0.6.0
+  * Updated Standards-Version to 3.9.2 No changes neeed.
+
+ -- Antonio Terceiro <terceiro@debian.org>  Fri, 04 Nov 2011 12:36:39 -0200
+
+libi18n-ruby (0.4.1-1) unstable; urgency=low
+
+  * New upstream release (Closes: #589572)
+  * Fix watch file by adding needed uversionmangle option
+  * Bump standards version to 3.9.1 (no changes)
+  * Switch to dpkg-source 3.0 (quilt) format.
+
+ -- Roberto C. Sanchez <roberto@connexer.com>  Sat, 31 Jul 2010 21:26:52 -0400
+
+libi18n-ruby (0.3.6-1) unstable; urgency=low
+
+  [ Roberto C. Sanchez ]
+  * New upstream release
+  * Acknowledge NMU (Thanks to YABUKI Yukiharu)
+  * Update watchfile to use githubredir.debian.net
+  * Remove unused lintian override
+
+  [ Deepak Tripathi ]
+  * Not releasing, rails maint wanted to co-maintain.
+  * Port the package to Ruby 1.9.1 (Closes: #569875)
+  * Added myself as an uploader
+  * Bump standards version to 3.8.4 (no changes)
+
+ -- Roberto C. Sanchez <roberto@connexer.com>  Wed, 31 Mar 2010 20:45:13 -0400
+
+libi18n-ruby (0.1.1~git20081120-3.1) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * Drop ruby1.9.0 binary package.(Cloese #569875)
+
+ -- YABUKI Yukiharu <yyabuki@debian.org>  Tue, 16 Mar 2010 15:40:29 +0700
+
+libi18n-ruby (0.1.1~git20081120-3) unstable; urgency=low
+
+  * Update package section to ruby to comply with new archive layout.
+  * Bump standards version to 3.8.3 (no changes)
+  * Make lintian happy:
+    + Have Build-Depends satisfy requirements for 'debian/rules clean'
+
+ -- Roberto C. Sanchez <roberto@connexer.com>  Thu, 27 Aug 2009 18:59:34 -0400
+
+libi18n-ruby (0.1.1~git20081120-2) unstable; urgency=low
+
+  * Add full text of MIT license to debian/copyright
+
+ -- Roberto C. Sanchez <roberto@connexer.com>  Mon, 22 Dec 2008 22:41:40 -0500
+
+libi18n-ruby (0.1.1~git20081120-1) unstable; urgency=low
+
+  * Initial release (Closes: #507400)
+
+ -- Roberto C. Sanchez <roberto@connexer.com>  Sun, 30 Nov 2008 16:22:27 -0500

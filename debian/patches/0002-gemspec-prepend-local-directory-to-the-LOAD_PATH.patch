@@ -1,0 +1,20 @@
+From: Antonio Terceiro <terceiro@debian.org>
+Date: Thu, 6 Feb 2020 18:20:29 +0100
+Subject: gemspec: prepend local directory to the $LOAD_PATH
+
+---
+ i18n.gemspec | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/i18n.gemspec b/i18n.gemspec
+index 0e67209..f4211e9 100644
+--- a/i18n.gemspec
++++ b/i18n.gemspec
+@@ -1,6 +1,6 @@
+ # encoding: utf-8
+ 
+-$: << File.expand_path('../lib', __FILE__)
++$:.prepend File.expand_path('../lib', __FILE__)
+ require 'i18n/version'
+ 
+ Gem::Specification.new do |s|

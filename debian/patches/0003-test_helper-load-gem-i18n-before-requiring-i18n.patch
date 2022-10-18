@@ -1,0 +1,24 @@
+From: Antonio Terceiro <terceiro@debian.org>
+Date: Thu, 6 Feb 2020 18:38:26 +0100
+Subject: test_helper: load gem "i18n" before requiring "i18n"
+
+We are switching from the vendor layout to the rubygems layout, and this
+package has itself in its build dependency tree (because reaasons). If
+"i18n" is already available in the vendor, then it will take precedence
+in the require.
+---
+ test/test_helper.rb | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/test/test_helper.rb b/test/test_helper.rb
+index cc81aec..6b828b2 100644
+--- a/test/test_helper.rb
++++ b/test/test_helper.rb
+@@ -11,6 +11,7 @@ class TEST_CASE
+   end
+ end
+ 
++gem "i18n"
+ require 'i18n'
+ require 'mocha/setup'
+ require 'test_declarative'

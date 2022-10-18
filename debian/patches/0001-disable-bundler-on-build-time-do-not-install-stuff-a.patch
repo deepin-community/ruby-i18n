@@ -1,0 +1,21 @@
+From: Jonas Genannt <jonas.genannt@capi2name.de>
+Date: Thu, 6 Feb 2020 18:20:06 +0100
+Subject: disable bundler on build time, do not install stuff at build time
+
+Forwarded: not-needed
+---
+ test/test_helper.rb | 1 -
+ 1 file changed, 1 deletion(-)
+
+diff --git a/test/test_helper.rb b/test/test_helper.rb
+index d4a8488..cc81aec 100644
+--- a/test/test_helper.rb
++++ b/test/test_helper.rb
+@@ -11,7 +11,6 @@ class TEST_CASE
+   end
+ end
+ 
+-require 'bundler/setup'
+ require 'i18n'
+ require 'mocha/setup'
+ require 'test_declarative'

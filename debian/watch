@@ -1,0 +1,2 @@
+version=4
+https://github.com/ruby-i18n/i18n/releases .*/v(.*).tar.gz

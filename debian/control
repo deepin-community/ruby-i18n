@@ -1,0 +1,33 @@
+Source: ruby-i18n
+Section: ruby
+Priority: optional
+Maintainer: Debian Ruby Team <pkg-ruby-extras-maintainers@lists.alioth.debian.org>
+Uploaders: Chris Lamb <lamby@debian.org>
+Build-Depends: debhelper-compat (= 13),
+               gem2deb (>= 1),
+               rake,
+               ruby-concurrent,
+               ruby-activesupport,
+               ruby-mocha,
+               ruby-test-declarative,
+               ruby-test-unit
+Standards-Version: 4.6.0
+Vcs-Git: https://salsa.debian.org/ruby-team/ruby-i18n.git
+Vcs-Browser: https://salsa.debian.org/ruby-team/ruby-i18n
+Homepage: https://github.com/ruby-i18n/i18n
+Testsuite: autopkgtest-pkg-ruby
+XS-Ruby-Versions: all
+Rules-Requires-Root: no
+
+Package: ruby-i18n
+Architecture: all
+XB-Ruby-Versions: ${ruby:Versions}
+Depends: ${misc:Depends},
+         ${ruby:Depends},
+         ${shlibs:Depends}
+Breaks: redmine (<< 4.0.6-2~)
+Description: I18n and localization solution for Ruby
+ Implementation of the Ruby on Rails I18n core API. This is the same I18n
+ library included in the Ruby on Rails framework, but provided outside of
+ that framework for those who wish to use it without pulling the entire
+ Ruby on Rails framework.
